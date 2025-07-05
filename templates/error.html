@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kesalahan Deteksi</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      background: #343a40;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .navbar-brand img {
+      height: 40px;
+    }
+
+    .nav-link {
+      color: #198754 !important;
+      font-weight: 600;
+    }
+
+    .nav-link:hover {
+      text-decoration: underline;
+    }
+
+    .error-container {
+      max-width: 600px;
+      margin: 60px auto;
+      text-align: center;
+    }
+
+    .error-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center fw-bold" href="#">
+        <img src="/static/assets/logo.png" alt="Logo">
+        <span class="text-success ms-2">Cinta Cabe</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="/templates/">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="/templates/classification/">Klasifikasi</a></li>
+          <li class="nav-item"><a class="nav-link" href="/templates/tutorial/">Tutorial</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container error-container">
+    <img src="{{ user_image }}" alt="User Image" class="img-fluid my-3">
+    <h1 class="text-danger">{{ pred_output }}</h1>
+    <p class="lead">Silakan unggah gambar daun cabai yang lebih jelas atau dari sudut yang berbeda.</p>
+    <a href="/templates/classification/" class="btn btn-outline-light mt-3">Coba Lagi</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
